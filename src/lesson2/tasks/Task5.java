@@ -18,7 +18,7 @@ public class Task5 {
         System.out.println("Enter number");
         int fac = sc.nextInt();
         int i = 1;
-        int f = 1;
+        long f = 1;
         for (i = 1; i <= fac; i++) {
             f = f * i;
         }
