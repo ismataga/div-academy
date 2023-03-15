@@ -1,12 +1,9 @@
-package lesson2;
+package lesson2.tasks;
 
 import java.util.Scanner;
 
-public class Tasks2 {
+public class Task4 {
     public static void main(String[] args) {
-
-        //1.	Yaş 18dən böyük bərabərdirsə “Welcome”, əks halda “Access denied” çap edən proqram yazın.
-        // Bunu Ternary istifadə edərək yazın.
 
 
         //4.	Bir ədədin bütün rəqəmlərini ayrı-ayrılığda çap edən proqram yazın.
