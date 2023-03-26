@@ -4,23 +4,35 @@ import java.util.Scanner;
 
 public class Task7v24 {
     public static void main(String[] args) {
-        Scanner sc =  new Scanner(System.in);
-        System.out.print("Ededi daxil edin: ");
-//        int n = sc.nextInt();
-      boolean a = isPrime(sc.nextInt());
-        System.out.println(a);
+        Scanner input = new Scanner(System.in);
+        System.out.print("n-i daxil edin: ");
+        int n = input.nextInt();
+        int[] primes = new int[n];
+        int count = 0;
+        int number = 2;
 
-    }
-
-    public static boolean isPrime(int n) {
-        if (n <= 1) {
-            return false;
-        }
-        for (int i = 2; i <= Math.sqrt(n); i++) {
-            if (n % i == 0) {
-                return false;
+        while (count < n) {
+            boolean isPrime = true;
+            for (int i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i == 0) {
+                    isPrime = false;
+                    break;
+                }
             }
+            if (isPrime) {
+                primes[count] = number;
+                count++;
+            }
+            number++;
         }
-        return true;
+
+        System.out.print("Ilk " + n + " sade eded: ");
+        for (int i = 0; i < primes.length; i++) {
+            System.out.print(primes[i] + " ");
+        }
     }
 }
+
+
+
+

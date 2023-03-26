@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class Task7v2 {
     public static void main(String[] args) {
+
+        //verilmiş n üçün ilk n sadə ədədi array-a daxil edin
+
         Scanner sc =  new Scanner(System.in);
         System.out.print("Ededi daxil edin: ");
         int n = sc.nextInt();
@@ -11,7 +14,7 @@ public class Task7v2 {
         int[] primes = new int[n];
         int index = 0;
 
-        for (int i = 2; i <= n; i++) {
+        for (int i = 3; i <= n; i++) {
             if (isPrime(i)) {
                 primes[index++] = i;
             }
@@ -19,8 +22,8 @@ public class Task7v2 {
 
         System.out.println("Prime numbers up to " + n + ":");
 
-        for (int i = 0; i < index; i++) {
-            System.out.print( primes[i] + ",");
+        for (int i = 0; i < index ; i++) {
+            System.out.print( primes[i] + " ");
         }
 
     }
