@@ -1,4 +1,6 @@
-package lesson5;
+package lesson5.Practice;
+
+import lesson5.Practice.Car;
 
 import java.util.Scanner;
 

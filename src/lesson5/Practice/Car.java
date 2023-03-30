@@ -1,4 +1,4 @@
-package lesson5;
+package lesson5.Practice;
 
 public class Car {
     public String brand;

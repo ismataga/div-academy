@@ -1,4 +1,4 @@
-package lesson5.task3;
+package lesson5.tasks.task1.task3;
 
 public class Student {
     String name;

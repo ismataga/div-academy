@@ -1,4 +1,4 @@
-package lesson5.task2;
+package lesson5.tasks.task1.task2;
 
 public class Flaslight {
     boolean light;
