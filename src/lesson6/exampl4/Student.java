@@ -3,6 +3,9 @@ package lesson6.exampl4;
 public class Student extends Person {
     private String id;
     private int enterYear;
+    public Student(){
+
+    }
 
     public Student(String name, String surname, String id, int enterYear) {
         super(name, surname);
