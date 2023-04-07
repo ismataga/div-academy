@@ -1,5 +1,7 @@
 package lesson5.tasks.task1;
 
+import lesson5.tasks.task1.Calculator;
+
 import java.util.Scanner;
 
 

@@ -1,26 +1,29 @@
-package lesson5.tasks.task1.task3;
+package lesson5.tasks.task3;
 
 public class Student {
-    String name;
-    String surname;
-    String unversity;
-    int age;
-    int entrYear;
+    private String name;
+    private String surname;
+    private String unversity;
+    private int age;
+    private int entrYear;
 
     public String getName() {
         return name;
     }
-    public String getSurname(){
+
+    public String getSurname() {
         return surname;
     }
-    public String getUnversity(){
+
+    public String getUnversity() {
         return unversity;
     }
 
     public int getAge() {
         return age;
     }
-    public int getEntrYear(){
+
+    public int getEntrYear() {
         return entrYear;
     }
 
@@ -44,7 +47,7 @@ public class Student {
         this.entrYear = entrYear;
     }
 
-    public void getInfo(String name, String surname, String unversity, int age, int entrYear){
+    public void getInfo(String name, String surname, String unversity, int age, int entrYear) {
         System.out.println("name: " + name);
         System.out.println("surname: " + surname);
         System.out.println("university: " + unversity);

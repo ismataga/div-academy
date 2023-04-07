@@ -3,7 +3,7 @@ package lesson6.task1and2;
 
 import java.util.Scanner;
 
-public class StudentServices {
+public class  StudentServices {
     private final  Scanner input = new Scanner(System.in);
 
     private Student[] studentList = new Student[0];
