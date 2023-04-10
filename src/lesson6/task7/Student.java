@@ -1,7 +1,7 @@
-package lesson6.task1and2;
+package lesson6.task7;
 
 public class Student extends Person {
-    private String id;
+    private String username;
     private int enterYear;
     public Student(){
 
@@ -9,16 +9,16 @@ public class Student extends Person {
 
     public Student(String name, String surname, String id, int enterYear) {
         super(name, surname);
-        this.id = id;
+        this.username = id;
         this.enterYear = enterYear;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getId() {
-        return id;
+    public String getUsername() {
+        return username;
     }
 
     public void setEnterYear(int enterYear) {
@@ -33,7 +33,7 @@ public class Student extends Person {
         System.out.println(
                 "Name:" + getName() + "\n" +
                         "Surname: " + getSurname() + "\n" +
-                        "Id: " + getId() + "\n" +
+                        "Id: " + getUsername() + "\n" +
                         "EnterYear: " +getEnterYear()+ "\n"
         );
     }

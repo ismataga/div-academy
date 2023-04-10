@@ -1,34 +1,25 @@
-package lesson6.task1and2;
+package lesson6.task7.model;
 
+import lesson6.task7.StudentServices;
+import lesson6.task7.util.Util;
 
-import java.util.Scanner;
-
-
-public class Main {
-    public static void main(String[] args) {
-
+public class Model {
+    public static void studentRegistration() {
         StudentServices service = new StudentServices();
-        Scanner input = new Scanner(System.in);
-
-        studentRegistration(service, input);
-
-
-    }
-
-    private static void studentRegistration(StudentServices service, Scanner input) {
         while (true) {
 
             printCommand();
+            int option = Util.inputRequiredInt("Enter option: ");
 
-            int add = input.nextInt();
-
-            switch (add) {
+            switch (option) {
                 case 0 -> {
                     return;
                 }
                 case 1 -> service.register();
                 case 2 -> service.show();
-                case 3 -> service.findStudent();
+                case 3 -> service.delete();
+                case 4 -> service.replaceUsername();
+                case 5 -> service.findStudent();
                 default -> System.out.println("Invalid option");
             }
         }
@@ -38,9 +29,9 @@ public class Main {
         System.out.println("0. Exit system\n" +
                 "1. Register student\n" +
                 "2. Show student\n" +
-                "3. Search student\n"
+                "3. Delete student\n" +
+                "4. Update student\n" +
+                "5. Search student\n"
         );
     }
-
 }
-
