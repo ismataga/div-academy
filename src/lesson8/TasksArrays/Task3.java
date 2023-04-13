@@ -8,14 +8,18 @@ public class Task3 {
 
 
         for (int i = 0; i < arr1.length; i++) {
+            boolean b =false;
             int a = arr1[i];
             if (a % 4 == 0 && a % 5 == 0) {
                 if (a == arr1[arr1.length-1] ) {
+                    b=true;
                     System.out.print(a);
                 } else {
-                    System.out.print(a + ",");
+                    System.out.print(a +",");
                 }
-
+                if(i!=0){
+                    System.out.print(" ");
+                }
             }
         }
     }
