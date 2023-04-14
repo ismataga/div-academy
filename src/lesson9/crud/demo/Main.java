@@ -85,10 +85,8 @@ public class Main {
     }
 
     public static void showPerson() {
-        for (Person person : persons) {
-            if (person != null) {
-                System.out.println(person);
-            }
+        for (int i = 0; i < count; i++) {
+            System.out.println(persons[i]);
         }
     }
 

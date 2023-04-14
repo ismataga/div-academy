@@ -1,6 +1,7 @@
 package lesson9.crud.demo;
 
 public class Person {
+    public static Person p1;
     private long id;
     private String name;
     private  String surname;

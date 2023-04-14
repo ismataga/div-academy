@@ -22,7 +22,7 @@ public class StudentService {
 
     }
 
-    public void registStudent(){
+    public void registerStudent(){
 
         for (int i = 0; i<Global.users.length; i++){
             Global.users[i] = fillstudent();
