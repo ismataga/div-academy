@@ -3,7 +3,7 @@
 //import java.util.Scanner;
 //
 //
-//public class Main {
+//public class Mainv2 {
 //    private static Person[] persons;
 //
 //    private static int count = 0;
@@ -50,17 +50,23 @@
 //        return null;
 //    }
 //
-////    public static void getPersonByIdShow() {
-//////        Person person = getPersonById();
-////        if (person == null) {
-////            System.out.println("Id-si " + inputLong("enter id") + " olan Person yoxdur");
-////        } else {
-////            System.out.println(person);
-////        }
-////    }
+//    public static void getPersonByIdShow() {
+//        Person person = getPersonById(inputInt("enter id"));
+//        if (person == null) {
+//            System.out.println("Id-si " + inputLong("enter id") + " olan Person yoxdur");
+//        } else {
+//            System.out.println(person);
+//        }
+//    }
 //
-//    public static Person createPerson(Person person) {
-//        long id = person.getId();
+//    public static Person createPerson(long id, String name, String surname, byte age) {
+//        Person person = new Person();
+//        person.setId(12);
+//        person.setName("Aqil");
+//        person.setSurname("Agayev");
+//        person.setAge((byte) 12);
+//
+//
 //        for (Person currPerson : persons) {
 //            if (currPerson != null) {
 //                if (currPerson.getId() == id) {
@@ -103,10 +109,10 @@
 //                case 0 -> {
 //                    return;
 //                }
-//                case 1 -> createPerson(inputPersonData());
+////                case 1 -> createPerson(inputPersonData());
 //                case 2 -> showPerson();
 ////                case 3 -> updatePersonById();
-////                case 4 -> getPersonByIdShow();
+//                case 4 -> getPersonByIdShow();
 //                case 5 -> deletePerson(inputInt("Enter id: "));
 //                default -> System.out.println("Invalid option");
 //            }
@@ -119,7 +125,7 @@
 //        }
 //    }
 //
-////    public static Person updatePersonById( long id, Person newPerson) {
+//    //    public static Person updatePersonById( long id, Person newPerson) {
 ////        Person person = getPersonById(inputLong("Enter id: "));
 ////        if (person != null) {
 ////            person.setName(inputStr("Enter name: "));
@@ -130,26 +136,27 @@
 ////            return null;
 ////        }
 ////    }
-//    public static Person updatePersonById( long id, Person newPerson) {
+//    public static Person updatePersonById(long id, Person newPerson) {
 //        Person person = getPersonById(id);
 //        if (person != null) {
 //            person.setName(newPerson.getName());
 //            person.setSurname(newPerson.getSurname());
 //            person.setAge(newPerson.getAge());
 //            return person;
-//        }else {
+//        } else {
 //            return null;
 //        }
 //    }
-//    public static void printUpdatePerson(){
+//
+//    public static void printUpdatePerson() {
 //        Long id = inputLong("Enter id");
 ////        Person newPerson = new Person(inputPersonData());
 //        Person newPerson = new Person();
-//        Person updatePerson = updatePersonById(newPerson.getId(),newPerson);
+//        Person updatePerson = updatePersonById(newPerson.getId(), newPerson);
 //
-//        if(updatePerson==null){
+//        if (updatePerson == null) {
 //            System.out.println("Hec bir person deyisdirilmedi");
-//        }else {
+//        } else {
 //            System.out.println(updatePerson);
 //        }
 //    }

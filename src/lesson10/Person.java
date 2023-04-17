@@ -1,7 +1,6 @@
-package lesson9.crud.demo;
+package lesson10;
 
 public class Person {
-
     private long id;
     private String name;
 
@@ -22,6 +21,10 @@ public class Person {
 
     }
 
+
+
+
+
     public String getSubject() {
         return subject;
     }
@@ -38,7 +41,7 @@ public class Person {
         this.experience = experience;
     }
 
-    public Person(Person data) {
+    public Person(lesson9.crud.demo.Person data) {
 
     }
 
