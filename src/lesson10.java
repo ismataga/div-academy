@@ -1,17 +1,40 @@
 import lesson9.crud.demo.Person;
 
+import java.util.Scanner;
+
 public class lesson10 {
     public static void main(String[] args) {
 
-        Person person1= new Person(1L, "Aqil", (byte) 25,"Backend",5.5);
-        Person person = new Person();
-            person.getId();
-            person.getName();
-            person.getAge();
-            person.getSubject();
-            person.getExperience();
+//        Person person1= new Person(1, "Aqil", (byte) 25,"Backend",5.5);
+////        person1.setId(6);
+//        Person person = new Person();
+//            person.getId();
+//            person.getName();
+//            person.getAge();
+//            person.getSubject();
+//            person.getExperience();
+//
+//
+//        System.out.println(person1);
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
 
+        for (int i = 0; i < n; i++) {
+            int a = scanner.nextInt();
+            int b = scanner.nextInt();
+            int n1 = scanner.nextInt();
 
-        System.out.println(person);
+            for (int j = 0; j < n1; j++) {
+                int result = a;
+                for (int k = 0; k <= j; k++) {
+                    result += Math.pow(2, k) * b;
+                }
+                System.out.print(result + " ");
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+
     }
 }
