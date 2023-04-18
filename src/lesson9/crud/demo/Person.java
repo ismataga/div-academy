@@ -5,43 +5,18 @@ public class Person {
     private long id;
     private String name;
 
+    private String surname;
     private byte age;
-    private  String subject;
-    private double experience;
+    public Person(){
 
+    }
 
-    public Person(long id, String name, byte age,String subject,double experience) {
+    public Person(long id, String name, String surname, byte age) {
         this.id = id;
         this.name = name;
-        this.subject = subject;
+        this.surname = surname;
         this.age = age;
-        this.experience = experience;
     }
-
-    public Person() {
-
-    }
-
-    public String getSubject() {
-        return subject;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
-
-    public double getExperience() {
-        return experience;
-    }
-
-    public void setExperience(double experience) {
-        this.experience = experience;
-    }
-
-    public Person(Person data) {
-
-    }
-
 
     public long getId() {
         return id;
@@ -59,7 +34,13 @@ public class Person {
         this.name = name;
     }
 
+    public String getSurname() {
+        return surname;
+    }
 
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
 
     public byte getAge() {
         return age;
@@ -72,11 +53,12 @@ public class Person {
     @Override
     public String toString() {
         return "Person{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", subject='" + subject + '\'' +
-                ", experience=" + experience +
-                '}';
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", surname='" + surname + '\'' +
+            ", age=" + age +
+            '}';
     }
+
+
 }
