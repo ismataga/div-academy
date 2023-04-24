@@ -1,5 +1,9 @@
 package lesson11.tasks.task2;
 
 public interface Language {
-    void getName();
+    public static void getName() {
+        System.out.println("Java bir proqramlasdirma dilidir");
+    }
+
+
 }
