@@ -8,7 +8,7 @@ public class Mainv2 {
 
     private static int count = 0;
 
-//    static Scanner sc = new Scanner(System.in);
+    static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
         showMenu();
@@ -16,10 +16,9 @@ public class Mainv2 {
     }
 
     public static int inputInt(String title) {
-       try(Scanner inputInt = new Scanner(System.in)) {
-           System.out.print(title);
-           return inputInt.nextInt();
-       }
+        Scanner inputInt = new Scanner(System.in);
+        System.out.print(title);
+        return inputInt.nextInt();
     }
 
     public static long inputLong(String title) {
@@ -41,8 +40,9 @@ public class Mainv2 {
                 "1. Enter length of array\n" +
                 "2. Create person\n" +
                 "3. Read person\n" +
-                "4. Update persons by id\n" +
-                "5. Delete person\n");
+                "4. Find person by id\n" +
+                "5. Update persons by id\n" +
+                "6. Delete person\n");
     }
 
     public static void showMenu() {
@@ -57,8 +57,9 @@ public class Mainv2 {
                 case 1 -> lengthOfArray();
                 case 2 -> createPerson();
                 case 3 -> readPerson();
-                case 4 -> UpdatePerson();
-                case 5 -> deleteById(inputLong("Enter id: "));
+                case 4 -> findPersonById(inputLong("Axtardigimiz id: "));
+                case 5 -> updatePerson();
+                case 6 -> deletePerson();
                 default -> System.out.println("Invalid option");
             }
         }
@@ -70,8 +71,9 @@ public class Mainv2 {
     }
 
 
-    private static void deletePerson(Scanner sc) {
-        long isForDeleted = sc.nextLong();
+    private static void deletePerson() {
+        long isForDeleted = inputLong("Axtardigimiz id: ");
+        ;
         if (deleteById(isForDeleted)) {
             System.out.println("Id-si " + isForDeleted + " olan person silindi");
         } else {
@@ -79,8 +81,7 @@ public class Mainv2 {
         }
     }
 
-    private static void UpdatePerson() {
-        Scanner sc = new Scanner(System.in);
+    private static void updatePerson() {
 
         //id scannerden oxu
         //yeni personun melumatalrinin scannerden daxil edek
@@ -99,10 +100,9 @@ public class Mainv2 {
         }
     }
 
-    private static void findPersonById(Scanner sc) {
+    private static void findPersonById(long id) {
         //id scannerden oxu
-        System.out.println("Axtardigimiz id: ");
-        long id = sc.nextLong();
+        inputLong("Axtardigimiz id: ");
         //id esasinda pesonu axtar
         Person person = getPersonById(id);
 
@@ -116,19 +116,18 @@ public class Mainv2 {
         }
     }
 
-        public static Person createPerson() {
+    public static Person createPerson() {
         Person p1 = new Person(inputLong("Enter id: "), inputStr("Enter name: "), inputStr("Enter surname: "), (byte) inputInt("Enter age: "));
 
-        if(persons.length == count){
+        if (persons.length == count) {
             Person[] newLength = new Person[persons.length * 2];
-            for(int i = 0; i < persons.length; i++){
-                newLength[i]=persons[i];
+            for (int i = 0; i < persons.length; i++) {
+                newLength[i] = persons[i];
             }
-             persons = newLength ;
+            persons = newLength;
         }
-            persons[count] = p1;
-            count++;
-            return p1;
+        persons[count++] = p1;
+        return p1;
 
     }
 //    public static Person createPerson() {
@@ -201,4 +200,3 @@ public class Mainv2 {
 
 
 }
-
