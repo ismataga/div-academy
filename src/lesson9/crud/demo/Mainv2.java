@@ -1,36 +1,40 @@
 package lesson9.crud.demo;
 
+import java.util.ArrayList;
+
+import java.util.List;
 import java.util.Scanner;
 
 public class Mainv2 {
 
     private static Person[] persons;
+    private static List<Person> personList = new ArrayList<>();
+
 
     private static int count = 0;
 
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        showMenu();
+        Scanner input = new Scanner(System.in);
+        showMenu(input);
+
 
     }
 
-    public static int inputInt(String title) {
-        Scanner inputInt = new Scanner(System.in);
+    public static int inputInt(Scanner input, String title) {
         System.out.print(title);
-        return inputInt.nextInt();
+        return input.nextInt();
     }
 
-    public static long inputLong(String title) {
-        Scanner inputLong = new Scanner(System.in);
+    public static long inputLong(Scanner input, String title) {
         System.out.print(title);
-        return inputLong.nextLong();
+        return input.nextLong();
     }
 
-    public static String inputStr(String title) {
-        Scanner inputStr = new Scanner(System.in);
+    public static String inputStr(Scanner input, String title) {
         System.out.print(title);
-        return inputStr.nextLine();
+        return input.nextLine();
     }
 
     public static void printCommand() {
@@ -45,34 +49,34 @@ public class Mainv2 {
                 "6. Delete person\n");
     }
 
-    public static void showMenu() {
+    public static void showMenu(Scanner input) {
 
         while (true) {
             printCommand();
-            int option = inputInt("Enter option: ");
+            int option = inputInt(input, "Enter option: ");
             switch (option) {
                 case 0 -> {
                     return;
                 }
-                case 1 -> lengthOfArray();
-                case 2 -> createPerson();
+                case 1 -> lengthOfArray(input);
+                case 2 -> createPerson(input);
                 case 3 -> readPerson();
-                case 4 -> findPersonById(inputLong("Axtardigimiz id: "));
-                case 5 -> updatePerson();
-                case 6 -> deletePerson();
+                case 4 -> findPersonById(input);
+                case 5 -> updatePerson(input);
+                case 6 -> deletePerson(input);
                 default -> System.out.println("Invalid option");
             }
         }
     }
 
-    private static void lengthOfArray() {
-        int n = inputInt("Massivin olcusunu daxil et:  ");
+    private static void lengthOfArray(Scanner input) {
+        int n = inputInt(input, "Massivin olcusunu daxil et:  ");
         persons = new Person[n];
     }
 
 
-    private static void deletePerson() {
-        long isForDeleted = inputLong("Axtardigimiz id: ");
+    private static void deletePerson(Scanner input) {
+        long isForDeleted = inputInt(input,"Axtardigimiz id: ");
         ;
         if (deleteById(isForDeleted)) {
             System.out.println("Id-si " + isForDeleted + " olan person silindi");
@@ -81,12 +85,15 @@ public class Mainv2 {
         }
     }
 
-    private static void updatePerson() {
+    private static void updatePerson(Scanner input) {
 
         //id scannerden oxu
         //yeni personun melumatalrinin scannerden daxil edek
 
-        Person newPerson = new Person(inputLong("Enter id: "), inputStr("Enter name: "), inputStr("Enter surname: "), (byte) inputInt("Enter age: "));///yash
+        Person newPerson = new Person(inputLong(input,"Enter id: "),
+                inputStr(input,"Enter name: "),
+                inputStr(input,"Enter surname: "),
+                (byte) inputInt(input, "Enter age: "));///yash
         //update metodnu cagiraq
 
         Person updatePerson = updatePersonById(newPerson.getId(), newPerson);
@@ -100,11 +107,10 @@ public class Mainv2 {
         }
     }
 
-    private static void findPersonById(long id) {
+    private static void findPersonById(Scanner id) {
         //id scannerden oxu
-        inputLong("Axtardigimiz id: ");
         //id esasinda pesonu axtar
-        Person person = getPersonById(id);
+        Person person = getPersonById(sc.nextLong());
 
         //eger person null ise
         if (person == null) {
@@ -116,8 +122,11 @@ public class Mainv2 {
         }
     }
 
-    public static Person createPerson() {
-        Person p1 = new Person(inputLong("Enter id: "), inputStr("Enter name: "), inputStr("Enter surname: "), (byte) inputInt("Enter age: "));
+    public static Person createPerson(Scanner input) {
+        Person p1 = new Person(sc.nextLong(),
+                sc.nextLine(),
+                sc.nextLine(),
+                (byte) sc.nextInt());
 
         if (persons.length == count) {
             Person[] newLength = new Person[persons.length * 2];
@@ -130,22 +139,6 @@ public class Mainv2 {
         return p1;
 
     }
-//    public static Person createPerson() {
-//        Person p1 = new Person(inputLong("Enter id: "), inputStr("Enter name: "), inputStr("Enter surname: "), (byte) inputInt("Enter age: "));
-//        if (persons == null) {
-//            persons = new Person[1];
-//        } else if (count == persons.length) {
-//            Person[] newLength = new Person[persons.length * 2];
-//
-//            for (int i = 0; i < persons.length; i++) {
-//                newLength[i] = persons[i];
-//            }
-//            persons = newLength;
-//        }
-//        persons[count] = p1;
-//        count++;
-//        return p1;
-//    }
 
 
     public static void readPerson() {
@@ -167,7 +160,7 @@ public class Mainv2 {
     }
 
     public static Person updatePersonById(long id, Person newPerson) {
-        Person person = getPersonById(id);
+        Person person = getPersonById(sc.nextLong());
         if (person != null) {
             person.setName(newPerson.getName());
             person.setSurname(newPerson.getSurname());
@@ -190,7 +183,7 @@ public class Mainv2 {
                 }
                 //sonda sonuncu pesona null menimset
                 persons[--count] = null;
-                //true qatar
+                //true qaytar
                 return true;
             }
         }

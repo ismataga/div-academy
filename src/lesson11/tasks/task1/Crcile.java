@@ -3,16 +3,17 @@ package lesson11.tasks.task1;
 import java.util.Scanner;
 
 public class Crcile implements Shape {
+    private double radius;
+
+    public Crcile(double radius) {
+        this.radius = radius;
+    }
+
+
 
     @Override
     public double getArea() {
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter number: ");
-        double r = sc.nextDouble();
-        double p = 3.14;
-        double getArea = p * r * r;
-        return getArea;
+        return Math.PI*radius*radius;
 
     }
 }
